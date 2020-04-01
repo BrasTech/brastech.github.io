@@ -162,11 +162,9 @@ function BackgroundAnimation(speed){
 }
 let song;
 let jump_sound;
-let kick_;
 function preload(){
   song=loadSound('mainsong.mp3');
   jump_sound=loadSound('jump.wav');
-  kick_=loadSound('kick.mp3');
 }
 function SetScore(score){
   textFont(resources.font);
