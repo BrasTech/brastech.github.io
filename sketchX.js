@@ -160,9 +160,9 @@ function BackgroundAnimation(speed){
 
 function SetScore(score){
   textFont(resources.font);
-  textSize(10);
-  textAlign(LEFT);
-  text('Счёт: '+score,0 ,10);
+  textSize(30);
+  textAlign(CENTER);
+  text('Счёт: '+score,width/2 ,100);
 }
 let score=0;
 let resources,player,barrrel;
