@@ -32,7 +32,7 @@ class Player{
   this.size=height/5;
   this.end=false;
   this.buffer=false;
-  this.y=height/2+height/2/2.74-this.size;
+  this.y=height/2+height/2/2.9-this.size;
   this.reverse_jump=false;
   this.block_jump=false;
   this.awaiter=0;
@@ -58,23 +58,23 @@ class Player{
     }
     if(this.is_jumping){
       this.RealJump();
-      this.y=height/2+height/2/2.74-this.size-this.jump;
+      this.y=height/2+height/2/2.9-this.size-this.jump;
       image(this.player_jump,0,this.y,this.size,this.size);
       this.temp=image(this.player_jump,0,this.y,this.size,this.size);
     }
     else
     if(this.awaiter<15/this.speed){
-      this.y=height/2+height/2/2.74-this.size;
+      this.y=height/2+height/2/2.9-this.size;
       image(this.player_run[0],0,this.y,this.size,this.size);
       this.temp= image(this.player_run[0],0,this.y,this.size,this.size);
     }
     else if(this.awaiter<30/this.speed){
-      this.y=height/2+height/2/2.74-this.size;
+      this.y=height/2+height/2/2.9-this.size;
       image(this.player_run[1],0,this.y,this.size,this.size);
       this.temp= image(this.player_run[1],0,this.y,this.size,this.size);
     }
     else{
-      this.y=height/2+height/2/2.74-this.size;
+      this.y=height/2+height/2/2.8-this.size;
       image(this.player_run[2],0,this.y,this.size,this.size);
       this.temp= image(this.player_run[2],0,this.y,this.size,this.size);
       
@@ -100,7 +100,7 @@ class Player{
     this.barrel_center_x=this.barrel.x+(this.barrel.height/2);
     this.barrel_center_y=this.barrel.y+(this.barrel.height/2);
     this.data=sqrt(Math.pow(this.center_x-this.barrel_center_x,2)+Math.pow(this.center_y-this.barrel_center_y,2));
-    if(this.data<this.size-this.size/2.5)
+    if(this.data<this.size-this.size/2)
     return false;
     else return true;
     
@@ -133,7 +133,7 @@ class Barrel{
     if(this.isCreated==false){
       this.height=random(height/25,height/20);
       this.speed=speed;
-      this.y=height/2+height/2/2.74-this.height;
+      this.y=height/2+height/2/2.9-this.height;
       this.isCreated=true;
     }
     image(this.img,this.x,this.y,this.height,this.height);
@@ -181,7 +181,7 @@ function setup() {
   player=new Player(resources,barrel);
 }
 let level=1;
-let speed=4;
+let speed=6;
 let counter=0;
 let buffer=false;
 function draw() {
